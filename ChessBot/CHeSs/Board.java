@@ -65,6 +65,6 @@ public class Board extends JFrame {
         setSize(600, 600);
         setLocationRelativeTo(null);
         setVisible(true);
-     } // display()
+    } // display()
 
 } // class Board
