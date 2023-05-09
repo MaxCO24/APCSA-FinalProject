@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
-public class ChessLabel extends JLabel implements MouseListener, MouseMotionListener{
+public class ChessLabel extends JLabel implements MouseListener, MouseMotionListener {
 
     Font font = new Font("Ariel", Font.PLAIN, 72);
     Color bgLight = new Color(222, 184, 135);
