@@ -3,12 +3,9 @@ package CHeSs;
 import java.awt.*;
 import javax.swing.JFrame;
 
-
 public class Board extends JFrame {
 
-
    //Initialise arrays to hold panels and images of the board
-
     private ChessLabel[] labels;
 
     public Board() {
