@@ -16,36 +16,36 @@ public class Board extends JFrame {
             // black
             new ChessLabel("\u265C"), new ChessLabel("\u265E"), new ChessLabel("\u265D"), 
             new ChessLabel("\u265B"), new ChessLabel("\u265A"), new ChessLabel("\u265D"), 
-            new ChessLabel("\u265E"), new ChessLabel("\u265C")]
+            new ChessLabel("\u265E"), new ChessLabel("\u265C"),
 
             new ChessLabel("\u265F"), new ChessLabel("\u265F"), new ChessLabel("\u265F"), 
             new ChessLabel("\u265F"), new ChessLabel("\u265F"), new ChessLabel("\u265F"), 
-            new ChessLabel("\u265F"), new ChessLabel("\u265F")], 
+            new ChessLabel("\u265F"), new ChessLabel("\u265F"), 
             
             // empty
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-            new ChessLabel(" "), new ChessLabel(" ")], 
+            new ChessLabel(" "), new ChessLabel(" "), 
             
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-            new ChessLabel(" "), new ChessLabel(" ")], 
+            new ChessLabel(" "), new ChessLabel(" "), 
 
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-            new ChessLabel(" "), new ChessLabel(" ")],
+            new ChessLabel(" "), new ChessLabel(" "),
 
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
             new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-            new ChessLabel(" "), new ChessLabel(" ")],
+            new ChessLabel(" "), new ChessLabel(" "),
             // white
             new ChessLabel("\u2659"), new ChessLabel("\u2659"), new ChessLabel("\u2659"), 
             new ChessLabel("\u2659"), new ChessLabel("\u2659"), new ChessLabel("\u2659"), 
-            new ChessLabel("\u2659"), new ChessLabel("\u2659")],
+            new ChessLabel("\u2659"), new ChessLabel("\u2659"),
             
             new ChessLabel("\u2656"), new ChessLabel("\u2658"), new ChessLabel("\u2657"), 
             new ChessLabel("\u2655"), new ChessLabel("\u2654"), new ChessLabel("\u2657"), 
-            new ChessLabel("\u2658"), new ChessLabel("\u2656")]
+            new ChessLabel("\u2658"), new ChessLabel("\u2656")
         };
     } // Board()
 
