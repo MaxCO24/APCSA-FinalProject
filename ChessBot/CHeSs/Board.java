@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Board extends JFrame implements MouseListener{
+public class Board extends JFrame implements MouseListener {
    //Initialise variables to hold panels and images of the board
     private ChessLabel[][] labels;
 
