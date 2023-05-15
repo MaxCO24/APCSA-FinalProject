@@ -1,85 +1,68 @@
 package CHeSs;
 
 import java.awt.*;
-import javax.swing.JFrame;
-
+import javax.swing.*;
 
 public class Board extends JFrame {
-
-   //Initialise arrays to hold panels and images of the board
-
+   //Initialise variables to hold panels and images of the board
     private ChessLabel[][] labels;
 
-    public Board()
-    {
+    public Board() {
         labels = new ChessLabel[][] {
+            // black
+            {new ChessLabel("\u265C"), new ChessLabel("\u265E"), new ChessLabel("\u265D"), 
+            new ChessLabel("\u265B"), new ChessLabel("\u265A"), new ChessLabel("\u265D"), 
+            new ChessLabel("\u265E"), new ChessLabel("\u265C")},
 
-      // black
-      {new ChessLabel("bRook.png"), new ChessLabel("bKnight.png"), new ChessLabel("bBishop.png"), 
-       new ChessLabel("bQueen.png"), new ChessLabel("bKing.png"), new ChessLabel("bBishop.png"), 
-      new ChessLabel("bKnight.png"), new ChessLabel("bRook.png")},
+            {new ChessLabel("\u265F"), new ChessLabel("\u265F"), new ChessLabel("\u265F"), 
+            new ChessLabel("\u265F"), new ChessLabel("\u265F"), new ChessLabel("\u265F"), 
+            new ChessLabel("\u265F"), new ChessLabel("\u265F")}, 
 
-      {new ChessLabel("bPawn.png"), new ChessLabel("bPawn.png"), new ChessLabel("bPawn.png"), 
-      new ChessLabel("bPawn.png"), new ChessLabel("bPawn.png"), new ChessLabel("bPawn.png"), 
-      new ChessLabel("bPawn.png"), new ChessLabel("bPawn.png")}, 
-    
-      // empty
-       {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" ")}, 
-    
-       {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" ")}, 
+            // empty
+            {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" ")}, 
 
-       {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" ")},
+            {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" ")}, 
 
-       {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
-       new ChessLabel(" "), new ChessLabel(" ")},
+            {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" ")},
 
-       // white
-       {new ChessLabel("wPawn.png"), new ChessLabel("wPawn.png"), new ChessLabel("wPawn.png"), 
-       new ChessLabel("wPawn.png"), new ChessLabel("wPawn.png"), new ChessLabel("wPawn.png"), 
-       new ChessLabel("wPawn.png"), new ChessLabel("wPawn.png")},
-       
-       {new ChessLabel("wRook.png"), new ChessLabel("wKnight.png"), new ChessLabel("wBishop.png"), 
-       new ChessLabel("wQueen.png"), new ChessLabel("wKing.png"), new ChessLabel("wBishop.png"), 
-      new ChessLabel("wKnight.png"), new ChessLabel("wRook.png")}
+            {new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" "), new ChessLabel(" "), 
+            new ChessLabel(" "), new ChessLabel(" ")},
+
+            // white
+            {new ChessLabel("\u2659"), new ChessLabel("\u2659"), new ChessLabel("\u2659"), 
+            new ChessLabel("\u2659"), new ChessLabel("\u2659"), new ChessLabel("\u2659"), 
+            new ChessLabel("\u2659"), new ChessLabel("\u2659")},
+
+            {new ChessLabel("\u2656"), new ChessLabel("\u2658"), new ChessLabel("\u2657"), 
+            new ChessLabel("\u2655"), new ChessLabel("\u2654"), new ChessLabel("\u2657"), 
+            new ChessLabel("\u2658"), new ChessLabel("\u2656")}
         };
     } // Board()
 
-    void display()
-    {
-        setTitle("Chess board with PNG images");
-
+    void display() {
+        setTitle("Chess board with unicode images");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         Container contentPane = getContentPane();
         GridLayout gridLayout = new GridLayout(8, 8);
 
         contentPane.setLayout(gridLayout);
-
-        for (int row = 0; row < labels.length; row++) {
-            for (int col = 0; col < labels[row].length; col++) {
-                labels[row][col].set(col, row); // Set the row and column for each label
-                contentPane.add(labels[row][col]); // Add the label to the content pane
+        for (int r = 0; r < labels.length; r++) {
+            for (int c = 0; c < labels[0].length; c++) {
+                labels[r][c].set(r, c);
+                contentPane.add(labels[r][c]);
             }
-        }
-        
-        //int row = -1;
-        //for (int i = 0; i < labels.length; i++) 
-        //{
-        //    if(i % 8 == 0) row ++; // increment row number
-        //    labels[i].set(i, row);
-        //    contentPane.add(labels[i]);
-        //} Old 1-D array ver. of nested loop for reference
+        } // contentPane
 
         setSize(600, 600);
         setLocationRelativeTo(null);
         setVisible(true);
     } // display()
-
 } // class Board
