@@ -1,9 +1,10 @@
 package CHeSs;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
-public class Board extends JFrame {
+public class Board extends JFrame implements MouseListener{
    //Initialise variables to hold panels and images of the board
     private ChessLabel[][] labels;
 
@@ -49,6 +50,7 @@ public class Board extends JFrame {
     void display() {
         setTitle("Chess board with unicode images");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        addMouseListener(this);
 
         Container contentPane = getContentPane();
         GridLayout gridLayout = new GridLayout(8, 8);
@@ -65,4 +67,23 @@ public class Board extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     } // display()
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        System.out.println("Mouse Clicked at X: " + x + " - Y: " + y);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {}
+
+    @Override
+    public void mouseReleased(MouseEvent e) {}
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
 } // class Board
