@@ -2,11 +2,14 @@ package CHeSs;
 
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 
 public class Board extends JFrame implements MouseListener {
    //Initialise variables to hold panels and images of the board
     private ChessLabel[][] labels;
+    private boolean held = false;
+    private ChessLabel heldPiece;
 
     public Board() {
         labels = new ChessLabel[][] {
@@ -63,16 +66,31 @@ public class Board extends JFrame implements MouseListener {
             }
         } // contentPane
 
-        setSize(600, 600);
+        setSize(800, 800);
         setLocationRelativeTo(null);
         setVisible(true);
     } // display()
+
+    void selectPiece(int x, int y) {
+        heldPiece = labels[x][y];
+    }
+
+    void movePiece(int x, int y) {
+        labels[x][y] = heldPiece;
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        System.out.println("Mouse Clicked at X: " + x + " - Y: " + y);
+        if (held) {
+            selectPiece(x/100, y/100);
+        }
+        else {
+            movePiece(x/100, y/100);
+        }
+        held = !held;
+        System.out.println("Mouse Clicked at X: " + x/100 + " - Y: " + y/100 + " Held: " + held);
     }
 
     @Override
